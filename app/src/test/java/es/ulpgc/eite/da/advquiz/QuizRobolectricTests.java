@@ -942,21 +942,6 @@ public class QuizRobolectricTests {
       nextButton.performClick();
     }
 
-    /*option2Button.performClick();
-    nextButton.performClick();
-    option2Button.performClick();
-    nextButton.performClick();
-    option2Button.performClick();
-    nextButton.performClick();
-    option2Button.performClick();
-    nextButton.performClick();
-    option2Button.performClick();
-    nextButton.performClick();
-    option2Button.performClick();
-    nextButton.performClick();
-    option2Button.performClick();
-    nextButton.performClick();*/
-
     assertThat(questionField.getText().toString(), equalTo(quizArray[35]));
     assertThat(resultField.getText().toString(), equalTo(emptyResult));
     assertThat(option1Button.isEnabled(), equalTo(true));
@@ -995,21 +980,6 @@ public class QuizRobolectricTests {
       option2Button.performClick();
       nextButton.performClick();
     }
-
-    /*option2Button.performClick();
-    nextButton.performClick();
-    option2Button.performClick();
-    nextButton.performClick();
-    option2Button.performClick();
-    nextButton.performClick();
-    option2Button.performClick();
-    nextButton.performClick();
-    option2Button.performClick();
-    nextButton.performClick();
-    option2Button.performClick();
-    nextButton.performClick();
-    option2Button.performClick();
-    nextButton.performClick();*/
 
     assertThat(questionField.getText().toString(), equalTo(quizArray[35]));
     assertThat(resultField.getText().toString(), equalTo(emptyResult));
@@ -1050,25 +1020,6 @@ public class QuizRobolectricTests {
       nextButton.performClick();
     }
 
-    /*option2Button.performClick();
-    nextButton.performClick();
-    option2Button.performClick();
-    nextButton.performClick();
-    option2Button.performClick();
-    nextButton.performClick();
-    option2Button.performClick();
-    nextButton.performClick();
-    option2Button.performClick();
-    nextButton.performClick();
-    option2Button.performClick();
-    nextButton.performClick();
-    option2Button.performClick();
-    nextButton.performClick();
-    option2Button.performClick();
-    nextButton.performClick();
-    option2Button.performClick();
-    nextButton.performClick();*/
-
     assertThat(questionField.getText().toString(), equalTo(quizArray[45]));
     assertThat(resultField.getText().toString(), equalTo(emptyResult));
     assertThat(option1Button.isEnabled(), equalTo(true));
@@ -1106,25 +1057,6 @@ public class QuizRobolectricTests {
       option2Button.performClick();
       nextButton.performClick();
     }
-
-    /*option2Button.performClick();
-    nextButton.performClick();
-    option2Button.performClick();
-    nextButton.performClick();
-    option2Button.performClick();
-    nextButton.performClick();
-    option2Button.performClick();
-    nextButton.performClick();
-    option2Button.performClick();
-    nextButton.performClick();
-    option2Button.performClick();
-    nextButton.performClick();
-    option2Button.performClick();
-    nextButton.performClick();
-    option2Button.performClick();
-    nextButton.performClick();
-    option2Button.performClick();
-    nextButton.performClick();*/
 
     assertThat(questionField.getText().toString(), equalTo(quizArray[45]));
     assertThat(resultField.getText().toString(), equalTo(emptyResult));
@@ -1165,25 +1097,6 @@ public class QuizRobolectricTests {
       nextButton.performClick();
     }
 
-    /*option2Button.performClick();
-    nextButton.performClick();
-    option2Button.performClick();
-    nextButton.performClick();
-    option2Button.performClick();
-    nextButton.performClick();
-    option2Button.performClick();
-    nextButton.performClick();
-    option2Button.performClick();
-    nextButton.performClick();
-    option2Button.performClick();
-    nextButton.performClick();
-    option2Button.performClick();
-    nextButton.performClick();
-    option2Button.performClick();
-    nextButton.performClick();
-    option2Button.performClick();
-    nextButton.performClick();*/
-
     assertThat(questionField.getText().toString(), equalTo(quizArray[45]));
     assertThat(resultField.getText().toString(), equalTo(emptyResult));
     assertThat(option1Button.isEnabled(), equalTo(true));
@@ -1220,25 +1133,6 @@ public class QuizRobolectricTests {
       option2Button.performClick();
       nextButton.performClick();
     }
-
-    /*option2Button.performClick();
-    nextButton.performClick();
-    option2Button.performClick();
-    nextButton.performClick();
-    option2Button.performClick();
-    nextButton.performClick();
-    option2Button.performClick();
-    nextButton.performClick();
-    option2Button.performClick();
-    nextButton.performClick();
-    option2Button.performClick();
-    nextButton.performClick();
-    option2Button.performClick();
-    nextButton.performClick();
-    option2Button.performClick();
-    nextButton.performClick();
-    option2Button.performClick();
-    nextButton.performClick();*/
 
     cheatButton.performClick();
     cheatCtrler.create().resume().visible();
@@ -1281,25 +1175,6 @@ public class QuizRobolectricTests {
       option2Button.performClick();
       nextButton.performClick();
     }
-
-    /*option2Button.performClick();
-    nextButton.performClick();
-    option2Button.performClick();
-    nextButton.performClick();
-    option2Button.performClick();
-    nextButton.performClick();
-    option2Button.performClick();
-    nextButton.performClick();
-    option2Button.performClick();
-    nextButton.performClick();
-    option2Button.performClick();
-    nextButton.performClick();
-    option2Button.performClick();
-    nextButton.performClick();
-    option2Button.performClick();
-    nextButton.performClick();
-    option2Button.performClick();
-    nextButton.performClick();*/
 
     cheatButton.performClick();
     cheatCtrler.create().resume().visible();
@@ -1344,25 +1219,6 @@ public class QuizRobolectricTests {
       option2Button.performClick();
       nextButton.performClick();
     }
-
-    /*option2Button.performClick();
-    nextButton.performClick();
-    option2Button.performClick();
-    nextButton.performClick();
-    option2Button.performClick();
-    nextButton.performClick();
-    option2Button.performClick();
-    nextButton.performClick();
-    option2Button.performClick();
-    nextButton.performClick();
-    option2Button.performClick();
-    nextButton.performClick();
-    option2Button.performClick();
-    nextButton.performClick();
-    option2Button.performClick();
-    nextButton.performClick();
-    option2Button.performClick();
-    nextButton.performClick();*/
 
     option2Button.performClick();
     cheatButton.performClick();

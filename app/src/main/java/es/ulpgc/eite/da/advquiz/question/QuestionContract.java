@@ -37,7 +37,7 @@ public interface QuestionContract {
     int getQuizIndex();
     void setQuizIndex(int index);
     String getAnswer();
-    void updateQuizIndex();
+    void incrQuizIndex();
   }
 
 }

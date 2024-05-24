@@ -22,16 +22,10 @@ public class QuestionActivity
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_question);
-    setTitle(R.string.question_title);
+    setTitle(R.string.question_screen_title);
 
     ((TextView) findViewById(R.id.nextButton)).setText(R.string.next_button);
     ((TextView) findViewById(R.id.cheatButton)).setText(R.string.cheat_button);
-
-    /*
-    if(savedInstanceState == null) {
-      AppMediator.resetInstance();
-    }
-    */
 
     // do the setup
     QuestionScreen.configure(this);
@@ -69,7 +63,7 @@ public class QuestionActivity
 
   @Override
   public void displayQuestion(QuestionViewModel viewModel) {
-    //Log.e(TAG, "displayQuestion()");
+    //Log.e(TAG, "displayQuestion");
 
     // deal with the answer
     ((TextView) findViewById(R.id.questionTextView)).setText(viewModel.question);

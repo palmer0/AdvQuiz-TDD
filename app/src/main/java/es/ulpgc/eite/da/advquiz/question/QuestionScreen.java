@@ -17,8 +17,8 @@ public class QuestionScreen {
     AppMediator mediator = AppMediator.getInstance();
     QuestionContract.Presenter presenter = new QuestionPresenter(mediator);
 
-    String[] quiz = context.get().getResources().getStringArray(R.array.quiz_array);
-    QuestionContract.Model model = new QuestionModel(quiz);
+    String[] quizArray = context.get().getResources().getStringArray(R.array.quiz_array);
+    QuestionContract.Model model = new QuestionModel(quizArray);
 
     presenter.injectModel(model);
     presenter.injectView(new WeakReference<>(view));

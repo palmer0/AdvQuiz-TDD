@@ -160,7 +160,7 @@ public class ExtraRobolectricTest {
     // WHEN
 
     cheatButton.performClick();
-    cheatCtrler.pause().stop().destroy();
+    //cheatCtrler.pause().stop().destroy();
     cheatCtrler = Robolectric.buildActivity(CheatActivity.class);
     cheatCtrler.create().resume().visible();
 
@@ -193,7 +193,7 @@ public class ExtraRobolectricTest {
     // WHEN
 
     cheatButton.performClick();
-    cheatCtrler.pause().stop().destroy();
+    //cheatCtrler.pause().stop().destroy();
     cheatCtrler = Robolectric.buildActivity(CheatActivity.class);
     cheatCtrler.create().resume().visible();
 

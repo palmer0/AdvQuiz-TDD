@@ -62,7 +62,7 @@ public class QuestionModel implements QuestionContract.Model {
   }
 
   @Override
-  public void updateQuizIndex() {
+  public void incrQuizIndex() {
     quizIndex=quizIndex+5;
 
   }

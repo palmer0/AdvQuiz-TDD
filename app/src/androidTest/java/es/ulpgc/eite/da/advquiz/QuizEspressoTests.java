@@ -24,9 +24,11 @@ import androidx.test.uiautomator.UiDevice;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.junit.runners.MethodSorters;
 
 import es.ulpgc.eite.da.advquiz.app.AppMediator;
 import es.ulpgc.eite.da.advquiz.question.QuestionActivity;
@@ -34,6 +36,7 @@ import es.ulpgc.eite.da.advquiz.question.QuestionActivity;
 
 @LargeTest
 @RunWith(AndroidJUnit4.class)
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class QuizEspressoTests {
 
 
@@ -41,11 +44,6 @@ public class QuizEspressoTests {
   public ActivityTestRule<QuestionActivity> testRule =
       new ActivityTestRule(QuestionActivity.class, true, false);
 
-  /*
-  @Rule
-  public ActivityTestRule<QuestionActivity> testRule =
-      new ActivityTestRule(QuestionActivity.class );
-  */
 
   private Activity activity;
 
@@ -90,21 +88,6 @@ public class QuizEspressoTests {
     testRule.finishActivity();
   }
 
-  /*
-  private void rotate() {
-
-    Context context = ApplicationProvider.getApplicationContext();
-    int orientation = context.getResources().getConfiguration().orientation;
-    Activity activity = testRule.getActivity();
-
-    if(orientation  == Configuration.ORIENTATION_PORTRAIT) {
-      activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-    } else {
-      activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-    }
-  }
-  */
-
   private void rotate() {
 
     int orientation = activity.getRequestedOrientation();
@@ -142,7 +125,7 @@ public class QuizEspressoTests {
   }
 
   @Test
-  public void question1WithRotation() {
+  public void test01question1WithRotation() {
 
     //GIVEN
     //encontrándonos en pantalla Question
@@ -183,7 +166,7 @@ public class QuizEspressoTests {
   }
 
   @Test
-  public void question1Correct() {
+  public void test02question1Correct() {
 
     //GIVEN
     //encontrándonos en pantalla Question
@@ -225,7 +208,7 @@ public class QuizEspressoTests {
 
 
   @Test
-  public void question1Incorrect() {
+  public void test03question1Incorrect() {
 
     //GIVEN
     //encontrándonos en pantalla Question
@@ -268,7 +251,7 @@ public class QuizEspressoTests {
 
 
   @Test
-  public void question1CorrectWithRotation() {
+  public void test04question1CorrectWithRotation() {
     
     //GIVEN
     //encontrándonos en pantalla Question 
@@ -314,7 +297,7 @@ public class QuizEspressoTests {
 
 
   @Test
-  public void question1IncorrectWithRotation() {
+  public void test05question1IncorrectWithRotation() {
 
     //GIVEN
     //encontrándonos en pantalla Question 
@@ -360,7 +343,7 @@ public class QuizEspressoTests {
 
 
   @Test
-  public void question1CorrectWithNextClicked() {
+  public void test06question1CorrectWithNextClicked() {
     
     //GIVEN
     //encontrándonos en pantalla Question 
@@ -402,7 +385,7 @@ public class QuizEspressoTests {
 
 
   @Test
-  public void question1CorrectWithNextClickedAndRotation() {
+  public void test07question1CorrectWithNextClickedAndRotation() {
 
     //GIVEN
     //encontrándonos en pantalla Question
@@ -446,7 +429,7 @@ public class QuizEspressoTests {
 
 
   @Test
-  public void question1IncorrectWithNextClicked() {
+  public void test08question1IncorrectWithNextClicked() {
 
     //GIVEN
     //encontrándonos en pantalla Question
@@ -489,7 +472,7 @@ public class QuizEspressoTests {
 
 
   @Test
-  public void question1IncorrectWithNextClickedAndRotation() {
+  public void test09question1IncorrectWithNextClickedAndRotation() {
 
     //GIVEN
     //encontrándonos en pantalla Question
@@ -535,7 +518,7 @@ public class QuizEspressoTests {
 
 
   @Test
-  public void question2WithCheatClicked() {
+  public void test10question2WithCheatClicked() {
 
     //GIVEN
     //encontrándonos en pantalla Question
@@ -571,7 +554,7 @@ public class QuizEspressoTests {
 
 
   @Test
-  public void question2WithCheatClickedAndRotation() {
+  public void test11question2WithCheatClickedAndRotation() {
 
     //GIVEN
     //encontrándonos en pantalla Question
@@ -610,7 +593,7 @@ public class QuizEspressoTests {
 
 
   @Test
-  public void question2IncorrectWithCheatClicked() {
+  public void test12question2IncorrectWithCheatClicked() {
 
     //GIVEN
     //encontrándonos en pantalla Question
@@ -649,7 +632,7 @@ public class QuizEspressoTests {
 
 
   @Test
-  public void question2IncorrectWithCheatClickedAndRotation() {
+  public void test13question2IncorrectWithCheatClickedAndRotation() {
 
     //GIVEN
     //encontrándonos en pantalla Question
@@ -690,7 +673,7 @@ public class QuizEspressoTests {
 
 
   @Test
-  public void question2WithCheatAndNoClicked() {
+  public void test14question2WithCheatAndNoClicked() {
 
     //GIVEN
     //encontrándonos en pantalla Cheat
@@ -729,7 +712,7 @@ public class QuizEspressoTests {
 
 
   @Test
-  public void question2IncorrectWithCheatAndNoClicked() {
+  public void test15question2IncorrectWithCheatAndNoClicked() {
 
     //GIVEN
     //encontrándonos en pantalla Cheat
@@ -771,7 +754,7 @@ public class QuizEspressoTests {
 
 
   @Test
-  public void question2WithCheatAndYesClicked() {
+  public void test16question2WithCheatAndYesClicked() {
 
     //GIVEN
     //encontrándonos en pantalla Cheat
@@ -801,7 +784,7 @@ public class QuizEspressoTests {
 
 
   @Test
-  public void question2WithCheatAndYesClickedAndRotation() {
+  public void test17question2WithCheatAndYesClickedAndRotation() {
 
     //GIVEN
     //encontrándonos en pantalla Cheat
@@ -832,7 +815,7 @@ public class QuizEspressoTests {
 
 
   @Test
-  public void question2IncorrectWithCheatAndYesClicked() {
+  public void test18question2IncorrectWithCheatAndYesClicked() {
 
     //GIVEN
     //encontrándonos en pantalla Cheat
@@ -865,7 +848,7 @@ public class QuizEspressoTests {
 
 
   @Test
-  public void question2IncorrectWithCheatAndYesClickedAndRotation() {
+  public void test19question2IncorrectWithCheatAndYesClickedAndRotation() {
 
     //GIVEN
     //encontrándonos en pantalla Cheat
@@ -899,7 +882,7 @@ public class QuizEspressoTests {
 
 
   @Test
-  public void question2WithCheatAndYesClickedAndBackPressed() {
+  public void test20question2WithCheatAndYesClickedAndBackPressed() {
 
     //GIVEN
     //encontrándonos en pantalla Cheat
@@ -939,7 +922,7 @@ public class QuizEspressoTests {
 
 
   @Test
-  public void question2IncorrectWithCheatAndYesClickedAndBackPressed() {
+  public void test21question2IncorrectWithCheatAndYesClickedAndBackPressed() {
 
     //GIVEN
     //encontrándonos en pantalla Cheat
@@ -983,7 +966,7 @@ public class QuizEspressoTests {
   }
 
   @Test
-  public void question2WithCheatAndYesClickedAndBackPressedAndRotation() {
+  public void test22question2WithCheatAndYesClickedAndBackPressedAndRotation() {
 
     //GIVEN
     //encontrándonos en pantalla Cheat
@@ -1024,7 +1007,7 @@ public class QuizEspressoTests {
 
 
   @Test
-  public void question2IncorrectWithCheatAndYesClickedAndBackPressedAndRotation() {
+  public void test23question2IncorrectWithCheatAndYesClickedAndBackPressedAndRotation() {
 
     //GIVEN
     //encontrándonos en pantalla Cheat
@@ -1069,7 +1052,7 @@ public class QuizEspressoTests {
 
 
   @Test
-  public void question10WithCheatAndYesClickedAndBackPressedAndRotation() {
+  public void test24question10WithCheatAndYesClickedAndBackPressedAndRotation() {
 
     //GIVEN
     //encontrándonos en pantalla Cheat
@@ -1126,7 +1109,7 @@ public class QuizEspressoTests {
 
 
   @Test
-  public void question10IncorrectWithCheatAndYesClickedAndBackPressedAndRotation() {
+  public void test25question10IncorrectWithCheatAndYesClickedAndBackPressedAndRotation() {
 
     //GIVEN
     //encontrándonos en pantalla Cheat

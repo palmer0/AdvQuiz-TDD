@@ -24,7 +24,7 @@
 
         <activity
             android:name=".cheat.CheatActivity"
-            android:exported="true">
+            android:exported="false">
 
         </activity>
     </application>

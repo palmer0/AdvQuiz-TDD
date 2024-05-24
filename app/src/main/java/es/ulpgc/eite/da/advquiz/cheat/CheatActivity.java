@@ -21,11 +21,10 @@ public class CheatActivity
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_cheat);
-    setTitle(R.string.cheat_title);
+    setTitle(R.string.cheat_screen_title);
 
     ((TextView) findViewById(R.id.noButton)).setText(R.string.no_button);
     ((TextView) findViewById(R.id.yesButton)).setText(R.string.yes_button);
-
     ((TextView) findViewById(R.id.warningTextView)).setText(R.string.warning_message);
 
     // do the setup
@@ -57,7 +56,7 @@ public class CheatActivity
 
 
   @Override
-  public void onFinish() {
+  public void finishView() {
     finish();
   }
 
@@ -70,7 +69,7 @@ public class CheatActivity
 
   @Override
   public void displayAnswer(CheatViewModel viewModel) {
-    //Log.e(TAG, "displayAnswer()");
+    //Log.e(TAG, "displayAnswer");
 
     // deal with the answer
     ((TextView) findViewById(R.id.answerTextView)).setText(viewModel.answer);

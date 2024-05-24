@@ -19,16 +19,20 @@ public class QuestionPresenter implements QuestionContract.Presenter {
 
   public QuestionPresenter(AppMediator mediator) {
     this.mediator = mediator;
-    //state = mediator.getQuestionState();
   }
 
   @Override
   public void onCreatedCalled() {
-    Log.e(TAG, "onCreatedCalled()");
+    Log.e(TAG, "onCreatedCalled");
 
     // init the state
     state = new QuestionState();
     mediator.setQuestionState(state);
+
+    initViewData();
+  }
+
+  private void initViewData() {
 
     // call the model
     state.question = model.getQuestion();
@@ -36,20 +40,19 @@ public class QuestionPresenter implements QuestionContract.Presenter {
     state.option2 = model.getOption2();
     state.option3 = model.getOption3();
 
-    /*// reset state to tests
+    // reset state
     state.answerCheated=false;
     state.optionClicked = false;
-    state.option = 0;*/
+    state.option = 0;
 
     // update the view
     disableNextButton();
     view.get().resetResult();
   }
 
-
   @Override
   public void onRecreatedCalled() {
-    Log.e(TAG, "onRecreatedCalled()");
+    Log.e(TAG, "onRecreatedCalled");
 
     // update the state
     state = mediator.getQuestionState();
@@ -60,9 +63,11 @@ public class QuestionPresenter implements QuestionContract.Presenter {
 
     // update the view
     if(state.optionClicked){
+
+      boolean isCorrect = model.isCorrectOption(state.option);
       Log.e(TAG, "option: "+ state.option);
-      Log.e(TAG, "correct: "+ model.isCorrectOption(state.option));
-      view.get().updateResult(model.isCorrectOption(state.option));
+      Log.e(TAG, "correct: "  + isCorrect);
+      view.get().updateResult(isCorrect);
       //onOptionButtonClicked(state.option);
 
     } else {
@@ -73,11 +78,10 @@ public class QuestionPresenter implements QuestionContract.Presenter {
 
   @Override
   public void onResumeCalled() {
-    Log.e(TAG, "onResumeCalled()");
+    Log.e(TAG, "onResumeCalled");
 
     // use passed state if is necessary
     CheatToQuestionState savedState = mediator.getCheatToQuestionState();
-    //CheatToQuestionState savedState = getStateFromCheatScreen();
     if (savedState != null) {
 
       // update the state
@@ -96,24 +100,26 @@ public class QuestionPresenter implements QuestionContract.Presenter {
         view.get().displayQuestion(state);
 
         //boolean isCorrect = model.isCorrectOption(state.option);
-        //view.get().updateReply(isCorrect);
+        //view.get().updateResult(isCorrect);
       }
 
     } else {
       view.get().displayQuestion(state);
     }
 
+    //Log.e(TAG, "index: "+ state.quizIndex);
+
   }
 
 
   @Override
   public void onDestroyCalled() {
-    Log.e(TAG, "onDestroyCalled()");
+    Log.e(TAG, "onDestroyCalled");
   }
 
   @Override
   public void onOptionButtonClicked(int option) {
-    Log.e(TAG, "onOptionButtonClicked()");
+    Log.e(TAG, "onOptionButtonClicked");
 
     state.optionClicked=true;
     state.option=option;
@@ -133,24 +139,25 @@ public class QuestionPresenter implements QuestionContract.Presenter {
 
   @Override
   public void onNextButtonClicked() {
-    Log.e(TAG, "onNextButtonClicked()");
+    Log.e(TAG, "onNextButtonClicked");
 
     //state.optionClicked=false;
     //state.option=0;
 
-    model.updateQuizIndex();
+    model.incrQuizIndex();
     state.quizIndex=model.getQuizIndex();
-    onCreatedCalled();
+    Log.e(TAG, "index: "+ state.quizIndex);
+    //onCreatedCalled();
+    initViewData();
     onResumeCalled();
   }
 
   @Override
   public void onCheatButtonClicked() {
-    Log.e(TAG, "onCheatButtonClicked()");
+    Log.e(TAG, "onCheatButtonClicked");
 
     QuestionToCheatState nextState = new QuestionToCheatState();
     nextState.answer = model.getAnswer();
-    //passStateToCheatScreen(nextState);
     mediator.setQuestionToCheatState(nextState);
 
     view.get().navigateToCheatScreen();
@@ -170,18 +177,6 @@ public class QuestionPresenter implements QuestionContract.Presenter {
       state.nextEnabled=true;
     }
   }
-
-//  private void passStateToCheatScreen(QuestionToCheatState state) {
-//
-//    mediator.setQuestionToCheatState(state);
-//  }
-
-//  private CheatToQuestionState getStateFromCheatScreen() {
-//
-//    CheatToQuestionState state = mediator.getCheatToQuestionState();
-//    return state;
-//  }
-
 
   @Override
   public void injectView(WeakReference<QuestionContract.View> view) {

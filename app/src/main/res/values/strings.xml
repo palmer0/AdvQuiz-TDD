@@ -2,8 +2,8 @@
     <string name="app_name">Adv Quiz</string>
 
 
-    <string name="question_title">Question</string>
-    <string name="cheat_title">Cheat</string>
+    <string name="question_screen_title">Question</string>
+    <string name="cheat_screen_title">Cheat</string>
 
     <string name="correct_result">Correct</string>
     <string name="incorrect_result">Incorrect</string>
@@ -20,6 +20,7 @@
 
     <string-array name="quiz_array">
 
+        <!-- question=1 -->
         <!-- index=0 -->
         <item>¿En qué continente se encuentran los Andes?</item>
         <item>Asia</item>
@@ -27,6 +28,7 @@
         <item>América del Sur</item>
         <item>3</item>
 
+        <!-- question=2 -->
         <!-- index=5 -->
         <item>¿Qué país es el segundo más grande del mundo?</item>
         <item>China</item>
@@ -34,6 +36,7 @@
         <item>Canadá</item>
         <item>3</item>
 
+        <!-- question=3 -->
         <!-- index=10 -->
         <item>¿Cómo se llama la tercera isla más grande del mundo?</item>
         <item>Madagascar</item>
@@ -41,6 +44,7 @@
         <item>Sumatra</item>
         <item>2</item>
 
+        <!-- question=4 -->
         <!-- index=15 -->
         <item>¿Qué porcentaje de la superficie de la Tierra no es agua?</item>
         <item>19 %</item>
@@ -48,6 +52,7 @@
         <item>39 %</item>
         <item>1</item>
 
+        <!-- question=5 -->
         <!-- index=20 -->
         <item>¿Dónde se encuentra el río Amazonas?</item>
         <item>Asia</item>
@@ -55,6 +60,7 @@
         <item>América del Norte</item>
         <item>2</item>
 
+        <!-- question=6 -->
         <!-- index=25 -->
         <item>¿A través de que principal ciudad fluye el Támesis?</item>
         <item>Liverpool</item>
@@ -62,6 +68,7 @@
         <item>Londres</item>
         <item>3</item>
 
+        <!-- question=7 -->
         <!-- index=30 -->
         <item>¿Cuántas personas viven en Canadá?</item>
         <item>22 millonesr</item>
@@ -69,6 +76,7 @@
         <item>15 millonesr</item>
         <item>2</item>
 
+        <!-- question=8 -->
         <!-- index=35 -->
         <item>¿A qué altitud se encuentra Bogotá, la capital de Colombia?</item>
         <item>2640 metros</item>
@@ -76,6 +84,7 @@
         <item>1640 metros</item>
         <item>1</item>
 
+        <!-- question=9 -->
         <!-- index=40 -->
         <item>¿Cómo se llama el río que atraviesa Roma?</item>
         <item>Tigris</item>
@@ -83,6 +92,7 @@
         <item>Tiber</item>
         <item>3</item>
 
+        <!-- question=10 -->
         <!-- index=45 -->
         <item>¿Cuál es el río más largo del mundo?</item>
         <item>Nilo</item>

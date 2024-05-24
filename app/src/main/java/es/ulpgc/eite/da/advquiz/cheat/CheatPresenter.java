@@ -20,13 +20,12 @@ public class CheatPresenter implements CheatContract.Presenter {
 
   public CheatPresenter(AppMediator mediator) {
     this.mediator = mediator;
-    //state = mediator.getCheatState();
   }
 
 
   @Override
   public void onCreateCalled() {
-    Log.e(TAG, "onCreateCalled()");
+    Log.e(TAG, "onCreateCalled");
 
     // init the state
     state = new CheatState();
@@ -45,7 +44,42 @@ public class CheatPresenter implements CheatContract.Presenter {
 
     // use passed state if is necessary
     QuestionToCheatState savedState = mediator.getQuestionToCheatState();
-    //QuestionToCheatState savedState = getStateFromQuestionScreen();
+    if (savedState != null) {
+
+      Log.e(TAG, "answer: "+savedState.answer);
+
+      // fetch the model
+      model.setAnswer(savedState.answer);
+
+      // update the state
+      state.answer = model.getAnswer();
+      /*if(state.answerCheated) {
+        state.answer = model.getAnswer();
+      }*/
+
+    }
+  }
+
+  @Override
+  public void onRecreateCalled() {
+    Log.e(TAG, "onRecreateCalled");
+
+    // update the state
+    state = mediator.getCheatState();
+
+    Log.e(TAG, "answer: " + state.answer);
+
+    // fetch the model
+    model.setAnswer(state.answer);
+  }
+
+  @Override
+  public void onResumeCalled() {
+    Log.e(TAG, "onResumeCalled");
+
+    /*
+    // use passed state if is necessary
+    QuestionToCheatState savedState = mediator.getQuestionToCheatState();
     if (savedState != null) {
 
       Log.e(TAG, "answer: "+savedState.answer);
@@ -60,70 +94,42 @@ public class CheatPresenter implements CheatContract.Presenter {
       }
 
     }
-  }
-
-  @Override
-  public void onRecreateCalled() {
-    Log.e(TAG, "onRecreateCalled()");
-
-    // update the state
-    state = mediator.getCheatState();
-
-  }
-
-  @Override
-  public void onResumeCalled() {
-    Log.e(TAG, "onResumeCalled()");
-
-//    // use passed state if is necessary
-//    QuestionToCheatState savedState = mediator.getQuestionToCheatState();
-//    //QuestionToCheatState savedState = getStateFromQuestionScreen();
-//    if (savedState != null) {
-//
-//      Log.e(TAG, "answer: "+savedState.answer);
-//
-//      // fetch the model
-//      model.setAnswer(savedState.answer);
-//
-//
-//      // update the state
-//      if(state.answerCheated) {
-//        state.answer = model.getAnswer();
-//      }
-//
-//    }
+    */
 
     // update the view
     view.get().displayAnswer(state);
-    if(state.answer == null) {
+    if(!state.answerCheated) {
       view.get().resetAnswer();
     }
+
+    /*if(state.answer == null) {
+      view.get().resetAnswer();
+    }*/
   }
 
   @Override
   public void onDestroyCalled() {
-    Log.e(TAG, "onDestroyCalled()");
+    Log.e(TAG, "onDestroyCalled");
 
     //mediator.resetCheatState();
   }
 
   @Override
   public void onBackPressed() {
-    Log.e(TAG, "onBackPressed()");
+    Log.e(TAG, "onBackPressed");
 
     Log.e(TAG, "cheated "+state.answerCheated);
 
     CheatToQuestionState passedState=new CheatToQuestionState();
     passedState.answerCheated=state.answerCheated;
-    //passStateToQuestionScreen(passedState);
     mediator.setCheatToQuestionState(passedState);
 
-    view.get().onFinish();
+    view.get().finishView();
   }
 
   @Override
   public void onWarningButtonClicked(int option) {
-    Log.e(TAG, "onWarningButtonClicked()");
+    Log.e(TAG, "onWarningButtonClicked");
 
     //option=1 => yes, option=0 => no
 
@@ -132,7 +138,7 @@ public class CheatPresenter implements CheatContract.Presenter {
 
     } else {
       onBackPressed();
-      //view.get().onFinish();
+      //view.get().finishView();
     }
   }
 
@@ -144,17 +150,6 @@ public class CheatPresenter implements CheatContract.Presenter {
     // update the view
     view.get().displayAnswer(state);
   }
-
-//  private void passStateToQuestionScreen(CheatToQuestionState state) {
-//
-//    mediator.setCheatToQuestionState(state);
-//  }
-
-//  private QuestionToCheatState getStateFromQuestionScreen() {
-//
-//    QuestionToCheatState state = mediator.getQuestionToCheatState();
-//    return state;
-//  }
 
 
   @Override
