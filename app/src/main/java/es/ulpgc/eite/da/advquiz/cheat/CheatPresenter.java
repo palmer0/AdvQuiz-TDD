@@ -53,10 +53,6 @@ public class CheatPresenter implements CheatContract.Presenter {
 
       // update the state
       state.answer = model.getAnswer();
-      /*if(state.answerCheated) {
-        state.answer = model.getAnswer();
-      }*/
-
     }
   }
 
@@ -87,12 +83,8 @@ public class CheatPresenter implements CheatContract.Presenter {
       // fetch the model
       model.setAnswer(savedState.answer);
 
-
       // update the state
-      if(state.answerCheated) {
-        state.answer = model.getAnswer();
-      }
-
+      state.answer = model.getAnswer();
     }
     */
 
@@ -102,9 +94,6 @@ public class CheatPresenter implements CheatContract.Presenter {
       view.get().resetAnswer();
     }
 
-    /*if(state.answer == null) {
-      view.get().resetAnswer();
-    }*/
   }
 
   @Override
