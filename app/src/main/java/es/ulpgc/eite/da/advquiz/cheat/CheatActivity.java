@@ -51,7 +51,7 @@ public class CheatActivity
   public void onBackPressed() {
     //super.onBackPressed();
 
-    presenter.onBackPressed();
+    presenter.onBackButtonPressed();
   }
 
 

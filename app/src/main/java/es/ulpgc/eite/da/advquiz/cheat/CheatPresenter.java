@@ -104,8 +104,8 @@ public class CheatPresenter implements CheatContract.Presenter {
   }
 
   @Override
-  public void onBackPressed() {
-    Log.e(TAG, "onBackPressed");
+  public void onBackButtonPressed() {
+    Log.e(TAG, "onBackButtonPressed");
 
     Log.e(TAG, "cheated "+state.answerCheated);
 
@@ -126,7 +126,7 @@ public class CheatPresenter implements CheatContract.Presenter {
       showAnswer();
 
     } else {
-      onBackPressed();
+      onBackButtonPressed();
       //view.get().finishView();
     }
   }
