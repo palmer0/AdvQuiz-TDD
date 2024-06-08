@@ -132,7 +132,7 @@ public class ExtraRobolectricTest {
   @Test
   public void test() {
 
-    // GIVEN
+    // WHEN
 
     cheatButton.performClick();
     cheatCtrler.create().resume().visible().visible().get();

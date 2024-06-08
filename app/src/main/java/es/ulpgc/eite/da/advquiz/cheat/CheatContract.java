@@ -28,12 +28,12 @@ public interface CheatContract {
   }
 
   interface Model {
-    String getAnswer();
-    void setAnswer(String answer);
+    String getCorrectAnswer();
+    void setCorrectAnswer(String answer);
 
-    void setEmptyText(String text);
+    void setAnswerEmptyText(String text);
 
-    String getEmptyText();
+    String getAnswerEmptyText();
   }
 
 }

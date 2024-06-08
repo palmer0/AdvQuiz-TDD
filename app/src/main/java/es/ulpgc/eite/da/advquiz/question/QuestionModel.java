@@ -70,7 +70,7 @@ public class QuestionModel implements QuestionContract.Model {
   }
 
   @Override
-  public String getAnswer() {
+  public String getCorrectAnswer() {
     int index= Integer.valueOf(quizArray[quizIndex+4]);
     return quizArray[quizIndex+index];
   }

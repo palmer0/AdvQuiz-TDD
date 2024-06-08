@@ -49,10 +49,10 @@ public class CheatPresenter implements CheatContract.Presenter {
       Log.e(TAG, "answer: "+savedState.answer);
 
       // fetch the model
-      model.setAnswer(savedState.answer);
+      model.setCorrectAnswer(savedState.answer);
 
       // update the state
-      state.answer = model.getAnswer();
+      state.correctAnswer = model.getCorrectAnswer();
     }
   }
 
@@ -63,10 +63,10 @@ public class CheatPresenter implements CheatContract.Presenter {
     // update the state
     state = mediator.getCheatState();
 
-    Log.e(TAG, "answer: " + state.answer);
+    Log.e(TAG, "answer: " + state.correctAnswer);
 
     // fetch the model
-    model.setAnswer(state.answer);
+    model.setCorrectAnswer(state.correctAnswer);
   }
 
   @Override
@@ -90,15 +90,12 @@ public class CheatPresenter implements CheatContract.Presenter {
 
     // update the state
     if(!state.answerCheated) {
-      state.answer = model.getEmptyText();
+      state.answer = model.getAnswerEmptyText();
+    } else {
+      state.answer = state.correctAnswer;
     }
 
-//    // update the state
-//    if(!state.answerCheated) {
-//      state.answer = model.getEmptyText();
-//    } else {
-//      state.answer = model.getAnswer();
-//    }
+
 
     // update the view
     view.get().displayAnswerData(state);
@@ -116,6 +113,8 @@ public class CheatPresenter implements CheatContract.Presenter {
   @Override
   public void onPauseCalled() {
     Log.e(TAG, "onPauseCalled");
+
+    Log.e(TAG, "answer: " + state.correctAnswer);
 
     mediator.setCheatState(state);
   }
@@ -147,7 +146,7 @@ public class CheatPresenter implements CheatContract.Presenter {
     //option=1 => yes, option=0 => no
 
     if(option==1) {
-      showAnswer();
+      showCorrectAnswer();
 
     } else {
       onBackButtonPressed();
@@ -155,10 +154,10 @@ public class CheatPresenter implements CheatContract.Presenter {
     }
   }
 
-  private void showAnswer() {
+  private void showCorrectAnswer() {
     state.answerCheated=true;
     state.buttonEnabled =false;
-    state.answer = model.getAnswer();
+    state.answer = model.getCorrectAnswer();
 
     // update the view
     view.get().displayAnswerData(state);

@@ -39,7 +39,7 @@ public interface QuestionContract {
     boolean hasQuizFinished();
     int getQuizIndex();
     void setQuizIndex(int index);
-    String getAnswer();
+    String getCorrectAnswer();
     void incrQuizIndex();
 
     String getCorrectResultText();

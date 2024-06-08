@@ -4,30 +4,30 @@ public class CheatModel implements CheatContract.Model {
 
   public static String TAG = "AdvQuiz.CheatModel";
 
-  private String answer;
-  private String emptyText;
+  private String correctAnswer;
+  private String answerEmptyText;
 
   public CheatModel() {
 
   }
 
   @Override
-  public String getAnswer() {
-    return answer;
+  public String getCorrectAnswer() {
+    return correctAnswer;
   }
 
   @Override
-  public void setAnswer(String answer) {
-    this.answer=answer;
+  public void setCorrectAnswer(String answer) {
+    this.correctAnswer =answer;
   }
 
   @Override
-  public void setEmptyText(String text) {
-    emptyText = text;
+  public void setAnswerEmptyText(String text) {
+    answerEmptyText = text;
   }
 
   @Override
-  public String getEmptyText() {
-    return emptyText;
+  public String getAnswerEmptyText() {
+    return answerEmptyText;
   }
 }
