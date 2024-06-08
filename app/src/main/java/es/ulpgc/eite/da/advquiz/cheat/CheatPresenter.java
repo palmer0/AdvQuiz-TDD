@@ -29,12 +29,12 @@ public class CheatPresenter implements CheatContract.Presenter {
 
     // init the state
     state = new CheatState();
-    state.answerEnabled=true;
+    state.buttonEnabled =true;
     //mediator.setCheatState(state);
 
     /*
     // reset state to tests
-    state.answerEnabled=true;
+    state.buttonEnabled=true;
     state.answerCheated=false;
     state.answer = null;
 
@@ -133,9 +133,9 @@ public class CheatPresenter implements CheatContract.Presenter {
 
     Log.e(TAG, "cheated "+state.answerCheated);
 
-    CheatToQuestionState passedState=new CheatToQuestionState();
-    passedState.answerCheated=state.answerCheated;
-    mediator.setCheatToQuestionState(passedState);
+    CheatToQuestionState newState=new CheatToQuestionState();
+    newState.answerCheated=state.answerCheated;
+    mediator.setCheatToQuestionState(newState);
 
     view.get().finishView();
   }
@@ -157,7 +157,7 @@ public class CheatPresenter implements CheatContract.Presenter {
 
   private void showAnswer() {
     state.answerCheated=true;
-    state.answerEnabled=false;
+    state.buttonEnabled =false;
     state.answer = model.getAnswer();
 
     // update the view

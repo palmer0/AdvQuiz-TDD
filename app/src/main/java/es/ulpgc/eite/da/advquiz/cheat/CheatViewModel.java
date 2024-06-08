@@ -4,7 +4,7 @@ public class CheatViewModel {
 
   // put the view state here
 
-  public boolean answerEnabled;
+  public boolean buttonEnabled;
 
   public String answer;
 

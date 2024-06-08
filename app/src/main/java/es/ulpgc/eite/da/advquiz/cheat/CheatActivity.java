@@ -77,8 +77,8 @@ public class CheatActivity
 
     // deal with the answer
     ((TextView) findViewById(R.id.answerTextView)).setText(viewModel.answer);
-    findViewById(R.id.noButton).setEnabled(viewModel.answerEnabled);
-    findViewById(R.id.yesButton).setEnabled(viewModel.answerEnabled);
+    findViewById(R.id.noButton).setEnabled(viewModel.buttonEnabled);
+    findViewById(R.id.yesButton).setEnabled(viewModel.buttonEnabled);
   }
 
   /*
