@@ -52,7 +52,7 @@ public class ExtraEspressoTest {
 
 
   @Test
-  public void instrumentedTest() throws Exception {
+  public void test() throws Exception {
 
 
     // GIVEN

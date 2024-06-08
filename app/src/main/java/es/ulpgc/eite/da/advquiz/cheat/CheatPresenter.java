@@ -93,6 +93,13 @@ public class CheatPresenter implements CheatContract.Presenter {
       state.answer = model.getEmptyText();
     }
 
+//    // update the state
+//    if(!state.answerCheated) {
+//      state.answer = model.getEmptyText();
+//    } else {
+//      state.answer = model.getAnswer();
+//    }
+
     // update the view
     view.get().displayAnswerData(state);
 

@@ -51,7 +51,7 @@ public class QuizRobolectricTests {
     cheatCtrler = Robolectric.buildActivity(CheatActivity.class);
 
     questionCtrler.create().resume().visible();
-    updateQuestionActivityResources();
+    initQuestionActivityResources();
 
   }
 
@@ -60,7 +60,7 @@ public class QuizRobolectricTests {
     AppMediator.resetInstance();
   }
 
-  private void updateQuestionActivityResources() {
+  private void initQuestionActivityResources() {
 
     QuestionActivity activity = questionCtrler.get();
 
@@ -80,7 +80,7 @@ public class QuizRobolectricTests {
   }
 
 
-  private void updateCheatActivityResources() {
+  private void initCheatActivityResources() {
 
     CheatActivity activity = cheatCtrler.get();
 
@@ -194,7 +194,7 @@ public class QuizRobolectricTests {
     //  del usuario corresponde con respuesta correcta
     //  mostraremos botones Option y Cheat desactivados
     //  mostraremos botón Next activado
-    updateQuestionActivityResources();
+    initQuestionActivityResources();
     assertThat(questionField.getText().toString(), equalTo(quizArray[0]));
     assertThat(resultField.getText().toString(), equalTo(correctResult));
     assertThat(option1Button.isEnabled(), equalTo(false));
@@ -306,7 +306,7 @@ public class QuizRobolectricTests {
     //  mostraremos pantalla Question con siguiente pregunta  ya cargada
     //  mostraremos botones Option y Cheat activados
     //  mostraremos botón Next desactivado
-    updateQuestionActivityResources();
+    initQuestionActivityResources();
     assertThat(questionField.getText().toString(), equalTo(quizArray[5]));
     assertThat(resultField.getText().toString(), equalTo(emptyResult));
     assertThat(option1Button.isEnabled(), equalTo(true));
@@ -379,7 +379,7 @@ public class QuizRobolectricTests {
     //  visualizaremos pantalla Cheat donde se nos pedirá confirmación
     //  antes de mostrar respuesta correcta
     //  mostraremos botones Yes y NO activados
-    updateCheatActivityResources();
+    initCheatActivityResources();
     assertThat(warningField.getText().toString(), equalTo(warningMessage));
     assertThat(answerField.getText().toString(), equalTo(emptyAnswer));
     assertThat(yesButton.isEnabled(), equalTo(true));
@@ -415,8 +415,8 @@ public class QuizRobolectricTests {
     //  visualizaremos pantalla Cheat donde se nos pedirá confirmación
     //  antes de mostrar respuesta correcta
     //  mostraremos botones Yes y NO activados
-    updateQuestionActivityResources();
-    updateCheatActivityResources();
+    initQuestionActivityResources();
+    initCheatActivityResources();
     assertThat(warningField.getText().toString(), equalTo(warningMessage));
     assertThat(answerField.getText().toString(), equalTo(emptyAnswer));
     assertThat(yesButton.isEnabled(), equalTo(true));
@@ -450,7 +450,7 @@ public class QuizRobolectricTests {
     //  visualizaremos pantalla Cheat donde se nos pedirá confirmación
     //  antes de mostrar respuesta correcta
     //  mostraremos botones Yes y NO activados
-    updateCheatActivityResources();
+    initCheatActivityResources();
     assertThat(warningField.getText().toString(), equalTo(warningMessage));
     assertThat(answerField.getText().toString(), equalTo(emptyAnswer));
     assertThat(yesButton.isEnabled(), equalTo(true));
@@ -468,7 +468,7 @@ public class QuizRobolectricTests {
     //  mostraremos botones Yes y NO activados
     cheatButton.performClick();
     cheatCtrler.create().resume().visible();
-    updateCheatActivityResources();
+    initCheatActivityResources();
     assertThat(warningField.getText().toString(), equalTo(warningMessage));
     assertThat(answerField.getText().toString(), equalTo(emptyAnswer));
     assertThat(yesButton.isEnabled(), equalTo(true));
@@ -504,7 +504,7 @@ public class QuizRobolectricTests {
     //  mostraremos botones Yes y NO activados
     cheatButton.performClick();
     cheatCtrler.create().resume().visible();
-    updateCheatActivityResources();
+    initCheatActivityResources();
     assertThat(warningField.getText().toString(), equalTo(warningMessage));
     assertThat(answerField.getText().toString(), equalTo(emptyAnswer));
     assertThat(yesButton.isEnabled(), equalTo(true));
@@ -521,7 +521,7 @@ public class QuizRobolectricTests {
     //  antes de iniciar pantalla Cheat
     //  mostraremos botones Option y Cheat activados
     //  mostraremos botón Next desactivado
-    updateQuestionActivityResources();
+    initQuestionActivityResources();
     assertThat(questionField.getText().toString(), equalTo(quizArray[0]));
     assertThat(resultField.getText().toString(), equalTo(emptyResult));
     assertThat(option1Button.isEnabled(), equalTo(true));
@@ -543,7 +543,7 @@ public class QuizRobolectricTests {
     option2Button.performClick();
     cheatButton.performClick();
     cheatCtrler.create().resume().visible();
-    updateCheatActivityResources();
+    initCheatActivityResources();
     assertThat(warningField.getText().toString(), equalTo(warningMessage));
     assertThat(answerField.getText().toString(), equalTo(emptyAnswer));
     assertThat(yesButton.isEnabled(), equalTo(true));
@@ -580,7 +580,7 @@ public class QuizRobolectricTests {
     option2Button.performClick();
     cheatButton.performClick();
     cheatCtrler.create().resume().visible();
-    updateCheatActivityResources();
+    initCheatActivityResources();
     assertThat(warningField.getText().toString(), equalTo(warningMessage));
     assertThat(answerField.getText().toString(), equalTo(emptyAnswer));
     assertThat(yesButton.isEnabled(), equalTo(true));
@@ -596,7 +596,7 @@ public class QuizRobolectricTests {
     //  del cuestionario existente antes de iniciar pantalla Cheat
     //  mostraremos botones Next y Cheat activados
     //  mostraremos botón Option desactivado
-    updateQuestionActivityResources();
+    initQuestionActivityResources();
     assertThat(questionField.getText().toString(), equalTo(quizArray[0]));
     assertThat(resultField.getText().toString(), equalTo(incorrectResult));
     assertThat(option1Button.isEnabled(), equalTo(false));
@@ -617,7 +617,7 @@ public class QuizRobolectricTests {
     //  mostraremos botones Yes y NO activados
     cheatButton.performClick();
     cheatCtrler.create().resume().visible();
-    updateCheatActivityResources();
+    initCheatActivityResources();
     assertThat(warningField.getText().toString(), equalTo(warningMessage));
     assertThat(answerField.getText().toString(), equalTo(emptyAnswer));
     assertThat(yesButton.isEnabled(), equalTo(true));
@@ -631,7 +631,7 @@ public class QuizRobolectricTests {
     //  visualizaremos respuesta correcta a pregunta
     //  del cuestionario mostrada actualmente en pantalla Question
     //  mostraremos botones Yes y NO desactivados
-    updateQuestionActivityResources();
+    initQuestionActivityResources();
     assertThat(warningField.getText().toString(), equalTo(warningMessage));
     assertThat(answerField.getText().toString(), equalTo(quizArray[3]));
     assertThat(yesButton.isEnabled(), equalTo(false));
@@ -649,7 +649,7 @@ public class QuizRobolectricTests {
     //  mostraremos botones Yes y NO activados
     cheatButton.performClick();
     cheatCtrler.create().resume().visible();
-    updateCheatActivityResources();
+    initCheatActivityResources();
     assertThat(warningField.getText().toString(), equalTo(warningMessage));
     assertThat(answerField.getText().toString(), equalTo(emptyAnswer));
     assertThat(yesButton.isEnabled(), equalTo(true));
@@ -665,8 +665,8 @@ public class QuizRobolectricTests {
     //  visualizaremos respuesta correcta a pregunta
     //  del cuestionario mostrada actualmente en pantalla Question
     //  mostraremos botones Yes y NO desactivados
-    updateQuestionActivityResources();
-    updateCheatActivityResources();
+    initQuestionActivityResources();
+    initCheatActivityResources();
     assertThat(warningField.getText().toString(), equalTo(warningMessage));
     assertThat(answerField.getText().toString(), equalTo(quizArray[3]));
     assertThat(yesButton.isEnabled(), equalTo(false));
@@ -685,7 +685,7 @@ public class QuizRobolectricTests {
     option2Button.performClick();
     cheatButton.performClick();
     cheatCtrler.create().resume().visible();
-    updateCheatActivityResources();
+    initCheatActivityResources();
     assertThat(warningField.getText().toString(), equalTo(warningMessage));
     assertThat(answerField.getText().toString(), equalTo(emptyAnswer));
     assertThat(yesButton.isEnabled(), equalTo(true));
@@ -719,7 +719,7 @@ public class QuizRobolectricTests {
     option2Button.performClick();
     cheatButton.performClick();
     cheatCtrler.create().resume().visible();
-    updateCheatActivityResources();
+    initCheatActivityResources();
     assertThat(warningField.getText().toString(), equalTo(warningMessage));
     assertThat(answerField.getText().toString(), equalTo(emptyAnswer));
     assertThat(yesButton.isEnabled(), equalTo(true));
@@ -736,7 +736,7 @@ public class QuizRobolectricTests {
     //  visualizaremos respuesta correcta a pregunta
     //  del cuestionario mostrada actualmente en pantalla Question
     //  mostraremos botones Yes y NO desactivados
-    updateQuestionActivityResources();
+    initQuestionActivityResources();
     assertThat(warningField.getText().toString(), equalTo(warningMessage));
     assertThat(answerField.getText().toString(), equalTo(quizArray[3]));
     assertThat(yesButton.isEnabled(), equalTo(false));
@@ -753,7 +753,7 @@ public class QuizRobolectricTests {
     //  mostraremos botones Yes y NO activados
     cheatButton.performClick();
     cheatCtrler.create().resume().visible();
-    updateCheatActivityResources();
+    initCheatActivityResources();
     assertThat(warningField.getText().toString(), equalTo(warningMessage));
     assertThat(answerField.getText().toString(), equalTo(emptyAnswer));
     assertThat(yesButton.isEnabled(), equalTo(true));
@@ -792,7 +792,7 @@ public class QuizRobolectricTests {
     //  mostraremos botones Yes y NO activados
     cheatButton.performClick();
     cheatCtrler.create().resume().visible();
-    updateCheatActivityResources();
+    initCheatActivityResources();
     assertThat(warningField.getText().toString(), equalTo(warningMessage));
     assertThat(answerField.getText().toString(), equalTo(emptyAnswer));
     assertThat(yesButton.isEnabled(), equalTo(true));
@@ -811,7 +811,7 @@ public class QuizRobolectricTests {
     //  pregunta siguiente del cuestionario antes de iniciar pantalla Cheat
     //  mostraremos botones Option y Cheat activados
     //  mostraremos botón Next desactivado
-    updateQuestionActivityResources();
+    initQuestionActivityResources();
     assertThat(questionField.getText().toString(), equalTo(quizArray[5]));
     assertThat(resultField.getText().toString(), equalTo(emptyResult));
     assertThat(option1Button.isEnabled(), equalTo(true));
@@ -832,7 +832,7 @@ public class QuizRobolectricTests {
     option2Button.performClick();
     cheatButton.performClick();
     cheatCtrler.create().resume().visible();
-    updateCheatActivityResources();
+    initCheatActivityResources();
     assertThat(warningField.getText().toString(), equalTo(warningMessage));
     assertThat(answerField.getText().toString(), equalTo(emptyAnswer));
     assertThat(yesButton.isEnabled(), equalTo(true));
@@ -924,7 +924,7 @@ public class QuizRobolectricTests {
     //  THEN
     //  mostraremos mensaje Correct segun la respuesta del usuario
     //  mostraremos botones Option, Next y Cheat desactivados
-    updateQuestionActivityResources();
+    initQuestionActivityResources();
     assertThat(questionField.getText().toString(), equalTo(quizArray[5]));
     assertThat(resultField.getText().toString(), equalTo(correctResult));
     assertThat(option1Button.isEnabled(), equalTo(false));
@@ -1002,7 +1002,7 @@ public class QuizRobolectricTests {
     //  THEN
     //  mostraremos mensaje Correct segun la respuesta del usuario
     //  mostraremos botones Option, Next y Cheat desactivados
-    updateQuestionActivityResources();
+    initQuestionActivityResources();
     assertThat(questionField.getText().toString(), equalTo(quizArray[35]));
     assertThat(resultField.getText().toString(), equalTo(correctResult));
     assertThat(option1Button.isEnabled(), equalTo(false));
@@ -1079,7 +1079,7 @@ public class QuizRobolectricTests {
     //  THEN
     //  mostraremos mensaje Correct segun la respuesta del usuario
     //  mostraremos botones Option, Next y Cheat desactivados
-    updateQuestionActivityResources();
+    initQuestionActivityResources();
     assertThat(questionField.getText().toString(), equalTo(quizArray[45]));
     assertThat(resultField.getText().toString(), equalTo(correctResult));
     assertThat(option1Button.isEnabled(), equalTo(false));
@@ -1141,7 +1141,7 @@ public class QuizRobolectricTests {
 
     cheatButton.performClick();
     cheatCtrler.create().resume().visible();
-    updateCheatActivityResources();
+    initCheatActivityResources();
     assertThat(warningField.getText().toString(), equalTo(warningMessage));
     assertThat(answerField.getText().toString(), equalTo(emptyAnswer));
     assertThat(yesButton.isEnabled(), equalTo(true));
@@ -1183,7 +1183,7 @@ public class QuizRobolectricTests {
 
     cheatButton.performClick();
     cheatCtrler.create().resume().visible();
-    updateCheatActivityResources();
+    initCheatActivityResources();
     assertThat(warningField.getText().toString(), equalTo(warningMessage));
     assertThat(answerField.getText().toString(), equalTo(emptyAnswer));
     assertThat(yesButton.isEnabled(), equalTo(true));
@@ -1202,7 +1202,7 @@ public class QuizRobolectricTests {
     //  del cuestionario existente antes de iniciar pantalla Cheat
     //  mostraremos botón Cheat activado
     //  mostraremos botones Option y Next desactivados
-    updateQuestionActivityResources();
+    initQuestionActivityResources();
     assertThat(questionField.getText().toString(), equalTo(quizArray[45]));
     assertThat(resultField.getText().toString(), equalTo(emptyResult));
     assertThat(option1Button.isEnabled(), equalTo(false));
@@ -1228,7 +1228,7 @@ public class QuizRobolectricTests {
     option2Button.performClick();
     cheatButton.performClick();
     cheatCtrler.create().resume().visible();
-    updateCheatActivityResources();
+    initCheatActivityResources();
     assertThat(warningField.getText().toString(), equalTo(warningMessage));
     assertThat(answerField.getText().toString(), equalTo(emptyAnswer));
     assertThat(yesButton.isEnabled(), equalTo(true));

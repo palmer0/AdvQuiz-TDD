@@ -48,7 +48,7 @@ public class ExtraRobolectricTest {
     cheatCtrler = Robolectric.buildActivity(CheatActivity.class);
 
     questionCtrler.create().resume().visible().get();
-    updateQuestionActivityResources();
+    initQuestionActivityResources();
 
   }
 
@@ -57,7 +57,7 @@ public class ExtraRobolectricTest {
     AppMediator.resetInstance();
   }
 
-  private void updateQuestionActivityResources() {
+  private void initQuestionActivityResources() {
 
     QuestionActivity activity = questionCtrler.get();
 
@@ -77,7 +77,7 @@ public class ExtraRobolectricTest {
   }
 
 
-  private void updateCheatActivityResources() {
+  private void initCheatActivityResources() {
 
     CheatActivity activity = cheatCtrler.get();
 
@@ -136,7 +136,7 @@ public class ExtraRobolectricTest {
 
     cheatButton.performClick();
     cheatCtrler.create().resume().visible().visible().get();
-    updateCheatActivityResources();
+    initCheatActivityResources();
     yesButton.performClick();
 
 
@@ -155,7 +155,7 @@ public class ExtraRobolectricTest {
 
     // THEN
 
-    updateQuestionActivityResources();
+    initQuestionActivityResources();
     assertThat(
         questionField.getText().toString(),
         equalTo("¿Qué país es el segundo más grande del mundo?")
@@ -170,7 +170,7 @@ public class ExtraRobolectricTest {
     cheatCtrler = Robolectric.buildActivity(CheatActivity.class);
     cheatCtrler.create().resume().visible();
 
-    updateCheatActivityResources();
+    initCheatActivityResources();
     yesButton.performClick();
 
     // THEN
@@ -188,7 +188,7 @@ public class ExtraRobolectricTest {
 
     // THEN
 
-    updateQuestionActivityResources();
+    initQuestionActivityResources();
     assertThat(
         questionField.getText().toString(),
         equalTo("¿Cómo se llama la tercera isla más grande del mundo?")
@@ -205,7 +205,7 @@ public class ExtraRobolectricTest {
 
     // THEN
 
-    updateCheatActivityResources();
+    initCheatActivityResources();
     assertThat(
         answerField.getText().toString(),
         equalTo("???")
@@ -222,13 +222,13 @@ public class ExtraRobolectricTest {
 
     // WHEN
 
-    updateCheatActivityResources();
+    initCheatActivityResources();
     yesButton.performClick();
 
 
     // THEN
 
-    updateCheatActivityResources();
+    initCheatActivityResources();
     assertThat(answerField.getText().toString(), equalTo("Borneo"));
 
 
@@ -240,7 +240,7 @@ public class ExtraRobolectricTest {
 
     // THEN
 
-    updateCheatActivityResources();
+    initCheatActivityResources();
     assertThat(answerField.getText().toString(), equalTo("Borneo"));
 
 
@@ -253,7 +253,7 @@ public class ExtraRobolectricTest {
 
     // THEN
 
-    updateQuestionActivityResources();
+    initQuestionActivityResources();
     assertThat(
         questionField.getText().toString(),
         equalTo("¿Qué porcentaje de la superficie de la Tierra no es agua?")
