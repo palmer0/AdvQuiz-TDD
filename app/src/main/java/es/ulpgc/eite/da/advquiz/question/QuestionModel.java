@@ -7,6 +7,8 @@ public class QuestionModel implements QuestionContract.Model {
   private final String[] quizArray;
   private int quizIndex;
 
+  private String correctResultText, incorrectResultText, emptyResultText;
+
   public QuestionModel(String[] quizArray) {
     this.quizArray=quizArray;
   }
@@ -73,5 +75,33 @@ public class QuestionModel implements QuestionContract.Model {
     return quizArray[quizIndex+index];
   }
 
+  @Override
+  public String getCorrectResultText() {
+    return correctResultText;
+  }
 
+  @Override
+  public void setCorrectResultText(String text) {
+    correctResultText = text;
+  }
+
+  @Override
+  public String getIncorrectResultText() {
+    return incorrectResultText;
+  }
+
+  @Override
+  public void setIncorrectResultText(String text) {
+    incorrectResultText = text;
+  }
+
+  @Override
+  public String getEmptyResultText() {
+    return emptyResultText;
+  }
+
+  @Override
+  public void setEmptyResultText(String text) {
+    emptyResultText = text;
+  }
 }

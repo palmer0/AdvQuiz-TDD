@@ -19,6 +19,9 @@ public class QuestionScreen {
 
     String[] quizArray = context.get().getResources().getStringArray(R.array.quiz_array);
     QuestionContract.Model model = new QuestionModel(quizArray);
+    model.setCorrectResultText( context.get().getString(R.string.correct_result));
+    model.setIncorrectResultText( context.get().getString(R.string.incorrect_result));
+    model.setEmptyResultText( context.get().getString(R.string.empty_result));
 
     presenter.injectModel(model);
     presenter.injectView(new WeakReference<>(view));

@@ -47,7 +47,8 @@ public class QuestionPresenter implements QuestionContract.Presenter {
 
     // update the view
     disableNextButton();
-    view.get().resetResult();
+    state.result = model.getEmptyResultText();
+    //view.get().resetResult();
   }
 
   @Override
@@ -67,11 +68,21 @@ public class QuestionPresenter implements QuestionContract.Presenter {
       boolean isCorrect = model.isCorrectOption(state.option);
       Log.e(TAG, "option: "+ state.option);
       Log.e(TAG, "correct: "  + isCorrect);
-      view.get().updateResult(isCorrect);
+      //view.get().updateResult(isCorrect);
+
       //onOptionButtonClicked(state.option);
 
+      if(isCorrect) {
+        state.result = model.getCorrectResultText();
+
+      } else {
+        state.result = model.getIncorrectResultText();
+      }
+
     } else {
-      view.get().resetResult();
+
+      state.result = model.getEmptyResultText();
+      //view.get().resetResult();
     }
   }
 
@@ -97,20 +108,19 @@ public class QuestionPresenter implements QuestionContract.Presenter {
 
       } else {
         state.optionEnabled=false;
-        view.get().displayQuestion(state);
+        view.get().displayQuestionData(state);
 
         //boolean isCorrect = model.isCorrectOption(state.option);
         //view.get().updateResult(isCorrect);
       }
 
     } else {
-      view.get().displayQuestion(state);
+      view.get().displayQuestionData(state);
     }
 
     //Log.e(TAG, "index: "+ state.quizIndex);
 
   }
-
 
   @Override
   public void onDestroyCalled() {
@@ -129,11 +139,14 @@ public class QuestionPresenter implements QuestionContract.Presenter {
     boolean isCorrect = model.isCorrectOption(option);
     if(isCorrect) {
       state.cheatEnabled=false;
+      state.result = model.getCorrectResultText();
+
     } else {
       state.cheatEnabled=true;
+      state.result = model.getIncorrectResultText();
     }
 
-    view.get().updateResult(isCorrect);
+    //view.get().updateResult(isCorrect);
     onResumeCalled();
   }
 

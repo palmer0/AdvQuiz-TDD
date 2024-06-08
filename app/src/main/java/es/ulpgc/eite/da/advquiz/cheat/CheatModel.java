@@ -5,6 +5,7 @@ public class CheatModel implements CheatContract.Model {
   public static String TAG = "AdvQuiz.CheatModel";
 
   private String answer;
+  private String emptyText;
 
   public CheatModel() {
 
@@ -20,4 +21,13 @@ public class CheatModel implements CheatContract.Model {
     this.answer=answer;
   }
 
+  @Override
+  public void setEmptyText(String text) {
+    emptyText = text;
+  }
+
+  @Override
+  public String getEmptyText() {
+    return emptyText;
+  }
 }

@@ -9,9 +9,9 @@ public interface QuestionContract {
 
     void navigateToCheatScreen();
 
-    void displayQuestion(QuestionViewModel viewModel);
-    void resetResult();
-    void updateResult(boolean isCorrect);
+    void displayQuestionData(QuestionViewModel viewModel);
+    //void resetResult();
+    //void updateResult(boolean isCorrect);
   }
 
   interface Presenter {
@@ -38,6 +38,18 @@ public interface QuestionContract {
     void setQuizIndex(int index);
     String getAnswer();
     void incrQuizIndex();
+
+    String getCorrectResultText();
+
+    void setCorrectResultText(String text);
+
+    String getIncorrectResultText();
+
+    void setIncorrectResultText(String text);
+
+    String getEmptyResultText();
+
+    void setEmptyResultText(String text);
   }
 
 }

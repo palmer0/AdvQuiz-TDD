@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
@@ -42,9 +43,9 @@ public class QuizRobolectricTests {
   String emptyAnswer, warningMessage;
 
   @Before
-  public void setUp(){
+  public void setup(){
 
-    AppMediator.resetInstance();
+    //AppMediator.resetInstance();
 
     questionCtrler = Robolectric.buildActivity(QuestionActivity.class);
     cheatCtrler = Robolectric.buildActivity(CheatActivity.class);
@@ -54,6 +55,10 @@ public class QuizRobolectricTests {
 
   }
 
+  @After
+  public void reset(){
+    AppMediator.resetInstance();
+  }
 
   private void updateQuestionActivityResources() {
 

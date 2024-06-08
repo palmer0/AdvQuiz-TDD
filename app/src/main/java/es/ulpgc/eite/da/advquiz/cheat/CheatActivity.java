@@ -68,8 +68,8 @@ public class CheatActivity
   }
 
   @Override
-  public void displayAnswer(CheatViewModel viewModel) {
-    //Log.e(TAG, "displayAnswer");
+  public void displayAnswerData(CheatViewModel viewModel) {
+    //Log.e(TAG, "displayAnswerData");
 
     // deal with the answer
     ((TextView) findViewById(R.id.answerTextView)).setText(viewModel.answer);
@@ -77,11 +77,12 @@ public class CheatActivity
     findViewById(R.id.yesButton).setEnabled(viewModel.answerEnabled);
   }
 
+  /*
   @Override
   public void resetAnswer() {
     ((TextView) findViewById(R.id.answerTextView)).setText(R.string.empty_answer);
   }
-
+  */
 
   public void onWarningButtonClicked(View view) {
 

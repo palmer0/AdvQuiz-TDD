@@ -88,11 +88,21 @@ public class CheatPresenter implements CheatContract.Presenter {
     }
     */
 
+    // update the state
+    if(!state.answerCheated) {
+      state.answer = model.getEmptyText();
+    }
+
     // update the view
-    view.get().displayAnswer(state);
+    view.get().displayAnswerData(state);
+
+    /*
+    // update the view
+    view.get().displayAnswerData(state);
     if(!state.answerCheated) {
       view.get().resetAnswer();
     }
+    */
 
   }
 
@@ -137,7 +147,7 @@ public class CheatPresenter implements CheatContract.Presenter {
     state.answer = model.getAnswer();
 
     // update the view
-    view.get().displayAnswer(state);
+    view.get().displayAnswerData(state);
   }
 
 

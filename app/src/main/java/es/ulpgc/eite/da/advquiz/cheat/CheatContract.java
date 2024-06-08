@@ -7,8 +7,8 @@ public interface CheatContract {
   interface View {
     void injectPresenter(Presenter presenter);
 
-    void displayAnswer(CheatViewModel viewModel);
-    void resetAnswer();
+    void displayAnswerData(CheatViewModel viewModel);
+    //void resetAnswer();
     void finishView();
   }
 
@@ -27,6 +27,10 @@ public interface CheatContract {
   interface Model {
     String getAnswer();
     void setAnswer(String answer);
+
+    void setEmptyText(String text);
+
+    String getEmptyText();
   }
 
 }
