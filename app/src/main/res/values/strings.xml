@@ -2,8 +2,8 @@
     <string name="app_name">Adv Quiz</string>
 
 
-    <string name="question_screen_title">Question</string>
-    <string name="cheat_screen_title">Cheat</string>
+    <string name="question_screen_title">Question Screen</string>
+    <string name="cheat_screen_title">Cheat Screen</string>
 
     <string name="correct_result">Correct</string>
     <string name="incorrect_result">Incorrect</string>

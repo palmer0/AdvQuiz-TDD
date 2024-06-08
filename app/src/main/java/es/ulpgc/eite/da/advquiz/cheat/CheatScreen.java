@@ -18,7 +18,7 @@ public class CheatScreen {
     CheatContract.Presenter presenter = new CheatPresenter(mediator);
 
     CheatContract.Model model = new CheatModel();
-    model.setAnswerEmptyText( context.get().getString(R.string.empty_result));
+    model.setAnswerEmptyText( context.get().getString(R.string.empty_answer));
 
     presenter.injectModel(model);
     presenter.injectView(new WeakReference<>(view));
