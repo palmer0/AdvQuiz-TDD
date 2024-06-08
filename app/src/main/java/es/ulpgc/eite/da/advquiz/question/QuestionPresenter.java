@@ -105,6 +105,26 @@ public class QuestionPresenter implements QuestionContract.Presenter {
 
       if(!model.hasQuizFinished()) {
         onNextButtonClicked();
+        return;
+
+      } else {
+        state.optionEnabled=false;
+        //boolean isCorrect = model.isCorrectOption(state.option);
+        //view.get().updateResult(isCorrect);
+      }
+
+    }
+
+    view.get().displayQuestionData(state);
+
+
+    /*
+    // update the view
+    if(state.answerCheated){
+      state.answerCheated=false;
+
+      if(!model.hasQuizFinished()) {
+        onNextButtonClicked();
 
       } else {
         state.optionEnabled=false;
@@ -117,6 +137,7 @@ public class QuestionPresenter implements QuestionContract.Presenter {
     } else {
       view.get().displayQuestionData(state);
     }
+    */
 
     //Log.e(TAG, "index: "+ state.quizIndex);
 
