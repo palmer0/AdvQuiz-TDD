@@ -6,7 +6,7 @@ public class QuestionState extends QuestionViewModel {
 
   public int quizIndex;
 
-  public boolean optionClicked;
+  //public boolean optionClicked;
   public int option;
   public boolean answerCheated;
 }

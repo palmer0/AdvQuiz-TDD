@@ -42,7 +42,7 @@ public class QuestionPresenter implements QuestionContract.Presenter {
 
     // reset state
     state.answerCheated=false;
-    state.optionClicked = false;
+    //state.optionClicked = false;
     state.option = 0;
 
     // update the view
@@ -63,7 +63,8 @@ public class QuestionPresenter implements QuestionContract.Presenter {
     Log.e(TAG, "index: "+ state.quizIndex);
 
     // update the view
-    if(state.optionClicked){
+    if(state.option != 0){
+    //if(state.optionClicked){
 
       boolean isCorrect = model.isCorrectOption(state.option);
       Log.e(TAG, "option: "+ state.option);
@@ -161,7 +162,7 @@ public class QuestionPresenter implements QuestionContract.Presenter {
   public void onOptionButtonClicked(int option) {
     Log.e(TAG, "onOptionButtonClicked");
 
-    state.optionClicked=true;
+    //state.optionClicked=true;
     state.option=option;
 
     enableNextButton();
