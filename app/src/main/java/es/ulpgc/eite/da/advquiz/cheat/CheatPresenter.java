@@ -30,7 +30,7 @@ public class CheatPresenter implements CheatContract.Presenter {
     // init the state
     state = new CheatState();
     state.answerEnabled=true;
-    mediator.setCheatState(state);
+    //mediator.setCheatState(state);
 
     /*
     // reset state to tests
@@ -104,6 +104,13 @@ public class CheatPresenter implements CheatContract.Presenter {
     }
     */
 
+  }
+
+  @Override
+  public void onPauseCalled() {
+    Log.e(TAG, "onPauseCalled");
+
+    mediator.setCheatState(state);
   }
 
   @Override

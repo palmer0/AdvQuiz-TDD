@@ -27,7 +27,7 @@ public class QuestionPresenter implements QuestionContract.Presenter {
 
     // init the state
     state = new QuestionState();
-    mediator.setQuestionState(state);
+    //mediator.setQuestionState(state);
 
     initViewData();
   }
@@ -120,6 +120,13 @@ public class QuestionPresenter implements QuestionContract.Presenter {
 
     //Log.e(TAG, "index: "+ state.quizIndex);
 
+  }
+
+  @Override
+  public void onPauseCalled() {
+    Log.e(TAG, "onPauseCalled");
+
+    mediator.setQuestionState(state);
   }
 
   @Override

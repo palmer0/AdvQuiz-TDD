@@ -46,6 +46,14 @@ public class CheatActivity
     presenter.onResumeCalled();
   }
 
+
+  @Override
+  protected void onPause() {
+    super.onPause();
+
+    presenter.onPauseCalled();
+  }
+
   @SuppressLint("MissingSuperCall")
   @Override
   public void onBackPressed() {
@@ -56,16 +64,12 @@ public class CheatActivity
 
 
   @Override
-  public void finishView() {
-    finish();
-  }
-
-  @Override
   protected void onDestroy() {
     super.onDestroy();
 
     presenter.onDestroyCalled();
   }
+
 
   @Override
   public void displayAnswerData(CheatViewModel viewModel) {
@@ -89,6 +93,13 @@ public class CheatActivity
     int option = Integer.valueOf((String) view.getTag());
     presenter.onWarningButtonClicked(option);
   }
+
+
+  @Override
+  public void finishView() {
+    finish();
+  }
+
 
   @Override
   public void injectPresenter(CheatContract.Presenter presenter) {
