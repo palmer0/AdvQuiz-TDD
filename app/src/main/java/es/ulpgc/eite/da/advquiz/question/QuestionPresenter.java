@@ -122,6 +122,8 @@ public class QuestionPresenter implements QuestionContract.Presenter {
 
   }
 
+
+
   @Override
   public void onPauseCalled() {
     Log.e(TAG, "onPauseCalled");
@@ -154,7 +156,8 @@ public class QuestionPresenter implements QuestionContract.Presenter {
     }
 
     //view.get().updateResult(isCorrect);
-    onResumeCalled();
+    //onResumeCalled();
+    view.get().displayQuestionData(state);
   }
 
   @Override
@@ -169,7 +172,8 @@ public class QuestionPresenter implements QuestionContract.Presenter {
     Log.e(TAG, "index: "+ state.quizIndex);
     //onCreatedCalled();
     initViewData();
-    onResumeCalled();
+    //onResumeCalled();
+    view.get().displayQuestionData(state);
   }
 
   @Override
