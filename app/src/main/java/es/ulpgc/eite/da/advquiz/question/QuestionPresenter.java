@@ -102,9 +102,10 @@ public class QuestionPresenter implements QuestionContract.Presenter {
 
     // update the view
     if(state.answerCheated){
-      state.answerCheated=false;
+      //state.answerCheated=false;
 
       if(!model.hasQuizFinished()) {
+        state.answerCheated=false;
         onNextButtonClicked();
         return;
 
