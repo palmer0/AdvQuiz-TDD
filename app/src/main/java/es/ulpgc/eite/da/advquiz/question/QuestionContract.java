@@ -10,8 +10,6 @@ public interface QuestionContract {
     void navigateToCheatScreen();
 
     void displayQuestionData(QuestionViewModel viewModel);
-    //void resetResult();
-    //void updateResult(boolean isCorrect);
   }
 
   interface Presenter {

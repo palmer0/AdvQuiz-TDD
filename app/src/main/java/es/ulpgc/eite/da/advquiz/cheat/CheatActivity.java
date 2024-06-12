@@ -81,12 +81,6 @@ public class CheatActivity
     findViewById(R.id.yesButton).setEnabled(viewModel.buttonEnabled);
   }
 
-  /*
-  @Override
-  public void resetAnswer() {
-    ((TextView) findViewById(R.id.answerTextView)).setText(R.string.empty_answer);
-  }
-  */
 
   public void onWarningButtonClicked(View view) {
 

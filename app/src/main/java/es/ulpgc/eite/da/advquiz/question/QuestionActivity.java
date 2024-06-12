@@ -86,22 +86,6 @@ public class QuestionActivity
     findViewById(R.id.cheatButton).setEnabled(viewModel.cheatEnabled);
   }
 
-  /*
-  @Override
-  public void resetResult() {
-    ((TextView) findViewById(R.id.resultTextView)).setText(R.string.empty_result);
-  }
-
-  @Override
-  public void updateResult(boolean isCorrect) {
-    if(isCorrect){
-      ((TextView) findViewById(R.id.resultTextView)).setText(R.string.correct_result);
-    } else {
-      ((TextView) findViewById(R.id.resultTextView)).setText(R.string.incorrect_result);
-    }
-  }
-  */
-
 
   public void onNextButtonClicked(View view) {
     presenter.onNextButtonClicked();

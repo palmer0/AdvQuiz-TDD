@@ -30,17 +30,6 @@ public class CheatPresenter implements CheatContract.Presenter {
     // init the state
     state = new CheatState();
     state.buttonEnabled =true;
-    //mediator.setCheatState(state);
-
-    /*
-    // reset state to tests
-    state.buttonEnabled=true;
-    state.answerCheated=false;
-    state.answer = null;
-
-    // update the view
-    view.get().resetAnswer();
-    */
 
     // use passed state if is necessary
     QuestionToCheatState savedState = mediator.getQuestionToCheatState();
@@ -73,21 +62,6 @@ public class CheatPresenter implements CheatContract.Presenter {
   public void onResumeCalled() {
     Log.e(TAG, "onResumeCalled");
 
-    /*
-    // use passed state if is necessary
-    QuestionToCheatState savedState = mediator.getQuestionToCheatState();
-    if (savedState != null) {
-
-      Log.e(TAG, "answer: "+savedState.answer);
-
-      // fetch the model
-      model.setAnswer(savedState.answer);
-
-      // update the state
-      state.answer = model.getAnswer();
-    }
-    */
-
     // update the state
     if(!state.answerCheated) {
       state.answer = model.getAnswerEmptyText();
@@ -95,18 +69,8 @@ public class CheatPresenter implements CheatContract.Presenter {
       state.answer = state.correctAnswer;
     }
 
-
-
     // update the view
     view.get().displayAnswerData(state);
-
-    /*
-    // update the view
-    view.get().displayAnswerData(state);
-    if(!state.answerCheated) {
-      view.get().resetAnswer();
-    }
-    */
 
   }
 
@@ -150,7 +114,6 @@ public class CheatPresenter implements CheatContract.Presenter {
 
     } else {
       onBackButtonPressed();
-      //view.get().finishView();
     }
   }
 

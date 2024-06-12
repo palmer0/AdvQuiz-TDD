@@ -68,11 +68,4 @@ public class AppMediator  {
     questionToCheatState = state;
   }
 
-  /*
-  public void resetCheatState() {
-    cheatState= null;
-  }
-  */
-
-
 }

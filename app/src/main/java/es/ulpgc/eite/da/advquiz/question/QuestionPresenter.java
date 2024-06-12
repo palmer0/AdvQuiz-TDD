@@ -27,7 +27,6 @@ public class QuestionPresenter implements QuestionContract.Presenter {
 
     // init the state
     state = new QuestionState();
-    //mediator.setQuestionState(state);
 
     initViewData();
   }
@@ -42,13 +41,11 @@ public class QuestionPresenter implements QuestionContract.Presenter {
 
     // reset state
     state.answerCheated=false;
-    //state.optionClicked = false;
     state.option = 0;
 
     // update the view
     disableNextButton();
     state.result = model.getEmptyResultText();
-    //view.get().resetResult();
   }
 
   @Override
@@ -64,14 +61,10 @@ public class QuestionPresenter implements QuestionContract.Presenter {
 
     // update the view
     if(state.option != 0){
-    //if(state.optionClicked){
 
       boolean isCorrect = model.isCorrectOption(state.option);
       Log.e(TAG, "option: "+ state.option);
       Log.e(TAG, "correct: "  + isCorrect);
-      //view.get().updateResult(isCorrect);
-
-      //onOptionButtonClicked(state.option);
 
       if(isCorrect) {
         state.result = model.getCorrectResultText();
@@ -83,7 +76,6 @@ public class QuestionPresenter implements QuestionContract.Presenter {
     } else {
 
       state.result = model.getEmptyResultText();
-      //view.get().resetResult();
     }
   }
 
@@ -102,8 +94,6 @@ public class QuestionPresenter implements QuestionContract.Presenter {
 
     // update the view
     if(state.answerCheated){
-      //state.answerCheated=false;
-
       if(!model.hasQuizFinished()) {
         state.answerCheated=false;
         onNextButtonClicked();
@@ -111,35 +101,11 @@ public class QuestionPresenter implements QuestionContract.Presenter {
 
       } else {
         state.optionEnabled=false;
-        //boolean isCorrect = model.isCorrectOption(state.option);
-        //view.get().updateResult(isCorrect);
       }
 
     }
 
     view.get().displayQuestionData(state);
-
-
-    /*
-    // update the view
-    if(state.answerCheated){
-      state.answerCheated=false;
-
-      if(!model.hasQuizFinished()) {
-        onNextButtonClicked();
-
-      } else {
-        state.optionEnabled=false;
-        view.get().displayQuestionData(state);
-
-        //boolean isCorrect = model.isCorrectOption(state.option);
-        //view.get().updateResult(isCorrect);
-      }
-
-    } else {
-      view.get().displayQuestionData(state);
-    }
-    */
 
     //Log.e(TAG, "index: "+ state.quizIndex);
 
@@ -163,7 +129,6 @@ public class QuestionPresenter implements QuestionContract.Presenter {
   public void onOptionButtonClicked(int option) {
     Log.e(TAG, "onOptionButtonClicked");
 
-    //state.optionClicked=true;
     state.option=option;
 
     enableNextButton();
@@ -178,8 +143,6 @@ public class QuestionPresenter implements QuestionContract.Presenter {
       state.result = model.getIncorrectResultText();
     }
 
-    //view.get().updateResult(isCorrect);
-    //onResumeCalled();
     view.get().displayQuestionData(state);
   }
 
@@ -187,15 +150,10 @@ public class QuestionPresenter implements QuestionContract.Presenter {
   public void onNextButtonClicked() {
     Log.e(TAG, "onNextButtonClicked");
 
-    //state.optionClicked=false;
-    //state.option=0;
-
     model.incrQuizIndex();
     state.quizIndex=model.getQuizIndex();
     Log.e(TAG, "index: "+ state.quizIndex);
-    //onCreatedCalled();
     initViewData();
-    //onResumeCalled();
     view.get().displayQuestionData(state);
   }
 

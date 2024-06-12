@@ -8,7 +8,6 @@ public interface CheatContract {
     void injectPresenter(Presenter presenter);
 
     void displayAnswerData(CheatViewModel viewModel);
-    //void resetAnswer();
     void finishView();
   }
 
